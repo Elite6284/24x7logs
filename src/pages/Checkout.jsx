@@ -75,14 +75,11 @@ const Checkout = () => {
 		setDownloading(true);
 
 		try {
-			console.log("Fetching download URL");
+	
 			const fileRef = storageRef(storage, product.filePath);
-			console.log("Got file reference", fileRef);
 			const url = await getDownloadURL(fileRef);
-			console.log("Got download URL", url);
 			const response = await fetch(url);
 			const data = await response.blob();
-
 			// Deduct the product price from the user's balance
 			const newBalance = balance - product.price;
 
