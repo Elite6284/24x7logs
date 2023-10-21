@@ -56,7 +56,6 @@ function Home() {
 					id: doc.id,
 					...doc.data(),
 				}));
-				console.log(filesData);
 				setProducts(filesData);
 				setFilteredProducts(filesData);
 				setLoading(false);
